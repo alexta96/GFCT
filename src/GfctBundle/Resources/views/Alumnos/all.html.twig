@@ -1,0 +1,24 @@
+        {% extends '::base.html.twig' %}
+        {% block body %}
+        <div class="panel panel-default">
+        <div class="panel-heading"><h1>Listado De Alumnos</h1></div><br>
+        <table class="table">
+            <tr>
+                <th><b>#</b></th>
+                <th><b>Nombre</b></th>
+                <th><b>Apellidos</b></th>
+                <th><b>DNI</b></th>
+                <th><b>Nombre Empresa</b></th>
+            </tr>
+        {% for alumno in alumnos %}
+            <tr>
+                <th>{{ alumno.id }}</th>
+                <td>{{ alumno.nombre }}</td>
+                <td>{{ alumno.apellidos }}</td>
+                <td>{{ alumno.dni }}</td>
+                <td>{{ alumno.empresa.nombre }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        </div>
+        {% endblock %}

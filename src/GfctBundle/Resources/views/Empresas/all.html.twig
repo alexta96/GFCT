@@ -1,0 +1,26 @@
+        {% extends '::base.html.twig' %}
+        {% block body %}
+          <div class="panel panel-default">
+        <div class="panel-heading"><h1>Listado De Empresas</h1></div><br>
+        <table class="table">
+            <tr>
+                <th><b>#</b></th>
+                <th><b>Nombre</b></th>
+                <th><b>Dirección</b></th>
+                <th><b>CP</b></th>
+                <th><b>Telefono 1</b></th>
+                <th><b>Telefono 2</b></th>
+            </tr>
+        {% for empresas in empresas %}
+            <tr>
+                <th>{{ empresas.id }}</td>
+                <td>{{ empresas.nombre }}</td>
+                <td>{{ empresas.direccion }}</td>
+                <td>{{ empresas.cp }}</td>
+                <td>{{ empresas.telefono1 }}</td>
+                <td>{{ empresas.telefono2 }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        </div>
+        {% endblock %}

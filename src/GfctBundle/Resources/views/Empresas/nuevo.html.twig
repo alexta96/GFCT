@@ -1,0 +1,66 @@
+{% block title %}GTFC{% endblock %}
+
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+<h1>Crear Empresa</h1><br>
+
+
+{{ form_start(form) }}
+
+	<div>
+    <p>
+    {{ form_label(form.nombre, 'Nombre:', {'label_attr': {'class': ''}}) }}
+    </p>
+    {{ form_errors(form.nombre) }}
+    {{ form_widget(form.nombre, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+	<div>
+    <p>
+    {{ form_label(form.direccion, 'Direccion:', {'label_attr': {'class': ''}}) }}
+    </p>
+    {{ form_errors(form.direccion) }}
+    {{ form_widget(form.direccion, {'attr': {'class': 'form-control'}}) }}
+	</div>
+
+	<div>
+    <p>
+    {{ form_label(form.cp, 'CP:', {'label_attr': {'class': ''}}) }}
+    </p>
+    {{ form_errors(form.cp) }}
+    {{ form_widget(form.cp, {'attr': {'class': 'form-control'}}) }}
+	</div>
+
+	<div>
+    <p>
+    {{ form_label(form.telefono1, 'Telefono 1:', {'label_attr': {'class': ''}}) }}
+    </p>
+    {{ form_errors(form.telefono1) }}
+    {{ form_widget(form.telefono1, {'attr': {'class': 'form-control'}}) }}
+	</div>
+
+	<div>
+    <p>
+    {{ form_label(form.telefono2, 'Telefono 2:', {'label_attr': {'class': ''}}) }}
+    </p>
+    {{ form_errors(form.telefono2) }}
+    {{ form_widget(form.telefono2, {'attr': {'class': 'form-control'}}) }}
+	</div>
+
+	<div>
+    <p>
+    {{ form_label(form.fecha, 'Fecha:', {'label_attr': {'class': ''}}) }}
+    </p>
+    {{ form_errors(form.fecha) }}
+    {{ form_widget(form.fecha, {'attr': {'class': ''}}) }}
+	</div>
+
+    <div>
+    {{ form_widget(form.Crear, {'attr': {'class': 'submit'}}) }}
+    </div>
+{{ form_end(form) }}
+
+
+{% endblock %}
