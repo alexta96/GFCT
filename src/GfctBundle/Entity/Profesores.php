@@ -40,8 +40,14 @@ class Profesores
      *
      * @ORM\Column(name="departamento", type="string", length=100)
      */
-    private $departamento;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Alumnos", mappedBy="profesores")
+     */
+
+    private $alumnos;
+
+    private $departamento;
 
     /**
      * Get id

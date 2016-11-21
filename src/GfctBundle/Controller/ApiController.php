@@ -5,6 +5,7 @@ namespace GfctBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use GfctBundle\Entity\Empresas;
 use GfctBundle\Entity\Alumnos;
+use GfctBundle\Entity\Profesores;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -33,6 +34,33 @@ class ApiController extends Controller
         $data = array('empresas' => array());
         foreach ($empresas as $empresa) {
             $data['empresas'][] = $this->serializeEmpresa($empresa);
+        }
+        $response = new JsonResponse($data, 200);
+        return $response;
+        //return $this->json($empresas);
+    }
+
+
+    private function serializeProfesor(Profesores $profesor)
+    {
+      return array(
+          'nombre' => $profesor->getNombre(),
+          'apellidos' => $profesor->getApellidos(),
+          'departamento' => $profesor->getDepartamento(),
+
+      );
+    }
+
+    public function profesoresAction()
+    {
+        $repository = $this->getDoctrine()->getRepository('GfctBundle:Profesores');
+        $profesores = $repository->findAll();
+
+
+        //var_dump($profesores);
+        $data = array('profesores' => array());
+        foreach ($profesores as $profesor) {
+            $data['profesores'][] = $this->serializeProfesor($profesor);
         }
         $response = new JsonResponse($data, 200);
         return $response;

@@ -46,6 +46,14 @@ class Alumnos
      * @ORM\ManyToOne(targetEntity="Empresas", inversedBy="alumnos")
      * @ORM\JoinColumn(name="empresas_id", referencedColumnName="id")
      */
+
+    /**
+     * @ORM\OneToOne(targetEntity="Profesores", inversedBy="alumnos")
+     * @ORM\JoinColumn(name="profesores_id", referencedColumnName="id")
+     */
+
+    private $profesores;
+    
     private $empresa;
 
     /**

@@ -1,0 +1,39 @@
+{% block title %}GTFC{% endblock %}
+
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+<h1>Crear Profesor</h1><br>
+
+
+{{ form_start(form) }}
+
+	<div>
+    <p>
+    {{ form_label(form.nombre, 'Nombre:', {'label_attr': {'class': ''}}) }}
+    </p>
+    {{ form_errors(form.nombre) }}
+    {{ form_widget(form.nombre, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+	<div>
+    <p>
+    {{ form_label(form.apellidos, 'Apellidos:', {'label_attr': {'class': ''}}) }}
+    </p>
+    {{ form_errors(form.apellidos) }}
+    {{ form_widget(form.apellidos, {'attr': {'class': 'form-control'}}) }}
+	</div>
+
+	<div>
+    <p>
+    {{ form_label(form.departamento, 'Departamento:', {'label_attr': {'class': ''}}) }}
+    </p>
+    {{ form_errors(form.departamento) }}
+    {{ form_widget(form.departamento, {'attr': {'class': 'form-control'}}) }}
+	</div>
+
+{{ form_end(form) }}
+
+
+{% endblock %}

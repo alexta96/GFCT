@@ -18,10 +18,28 @@ nuevo_empresas_alumnos:
     path:     /alumnos/all
     defaults: { _controller: GfctBundle:Alumnos:all }
 
-api_mostrar:
-    path:     /apiget
+api_mostrar_empresas:
+    path:     /apiget/empresas
     defaults: { _controller: GfctBundle:Api:empresas }
+    methods: [GET]
 
 api_insertar:
     path:     /apipost
     defaults: { _controller: GfctBundle:Api:empresasinsert }
+
+all_profesores:
+    path:     /profesores/all
+    defaults: { _controller: GfctBundle:Profesores:all }
+
+profesores_crear:
+    path:     /profesores/new
+    defaults: { _controller: GfctBundle:Profesores:nuevo }
+
+profesor_exito:
+    path:     /profesores/exito
+    defaults: { _controller: GfctBundle:Profesores:exito }
+
+api_mostrar_profesores:
+    path:     /apiget/profesores
+    defaults: { _controller: GfctBundle:Api:profesores }
+    methods: [GET]

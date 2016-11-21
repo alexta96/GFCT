@@ -1,0 +1,22 @@
+        {% extends '::base.html.twig' %}
+        {% block body %}
+        <div class="panel panel-default">
+        <div class="panel-heading"><h1>Listado De Profesores</h1></div><br>
+        <table class="table">
+            <tr>
+                <th><b>#</b></th>
+                <th><b>Nombre</b></th>
+                <th><b>Apellidos</b></th>
+                <th><b>Departamento</b></th>
+            </tr>
+        {% for profesor in profesores %}
+            <tr>
+                <th>{{ profesor.id }}</td>
+                <td>{{ profesor.nombre }}</td>
+                <td>{{ profesor.apellidos }}</td>
+                <td>{{ profesor.departamento }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        </div>
+        {% endblock %}
