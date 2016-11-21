@@ -24,6 +24,7 @@ class ApiController extends Controller
 
       );
     }
+
     public function empresasAction()
     {
         $repository = $this->getDoctrine()->getRepository('GfctBundle:Empresas');
@@ -40,7 +41,7 @@ class ApiController extends Controller
         //return $this->json($empresas);
     }
 
-
+    //Funcion "serialize" que cogerá los campos de la BD
     private function serializeProfesor(Profesores $profesor)
     {
       return array(
@@ -51,6 +52,7 @@ class ApiController extends Controller
       );
     }
 
+    //Funcion profesores que mostrará los datos de los profesores tranformandolo en formato JSON 
     public function profesoresAction()
     {
         $repository = $this->getDoctrine()->getRepository('GfctBundle:Profesores');
@@ -64,7 +66,7 @@ class ApiController extends Controller
         }
         $response = new JsonResponse($data, 200);
         return $response;
-        //return $this->json($empresas);
+        //return $this->json($profesores);
     }
 }
 

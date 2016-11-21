@@ -15,6 +15,8 @@ class ProfesoresType extends AbstractType
      * @param FormBuilderInterface $builder
      * @param array $options
      */
+
+    //Funcion "build" que se encarga de hacer el formulario mediante los campos de nuestra BD
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -28,6 +30,7 @@ class ProfesoresType extends AbstractType
     /**
      * @param OptionsResolver $resolver
      */
+
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(

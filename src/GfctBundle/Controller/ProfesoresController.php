@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 
 class ProfesoresController extends Controller
+
+//Funcion all que mostrará la tabla Profesores
 {
     public function allAction()
     {
@@ -19,6 +21,7 @@ class ProfesoresController extends Controller
         return $this->render('GfctBundle:Profesores:all.html.twig', array("profesores"=>$profesores));
     }
 
+//Funcion "nuevo" que cargará el formulario e insertará el profesor en la BD
     public function nuevoAction(Request $request)
     {
         $profesor = new Profesores();
@@ -37,6 +40,7 @@ class ProfesoresController extends Controller
         return $this->render('GfctBundle:Profesores:nuevo.html.twig', array("form"=>$form->createView()));
     }
 
+//Funcion "exito" que mostrará un mensaje de inserción cuando el profesor haya sido insertado
     public function exitoAction()
     {
         return $this->render('GfctBundle:Profesores:exito.html.twig');
