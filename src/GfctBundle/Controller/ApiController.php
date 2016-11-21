@@ -38,29 +38,6 @@ class ApiController extends Controller
         return $response;
         //return $this->json($empresas);
     }
-
-    private function deserializeEmpresa(Empresas $empresa)
-    {
-      return array(
-          $empresa->setNombre => 'nombre',
-          $empresa->setDireccion => 'direccion',
-          $empresa->setCp => 'cp',
-          $empresa->setTelefono1 => 'telefono1',
-          $empresa->setTelefono2 => 'telefono2',
-
-      );
-
-    private function insertEmpresa(Empresas $empresa)
-    {
-      return array(
-          $empresa->setNombre => 'nombre',
-          $empresa->setDireccion => 'direccion',
-          $empresa->setCp => 'cp',
-          $empresa->setTelefono1 => 'telefono1',
-          $empresa->setTelefono2 => 'telefono2',
-
-      );
-    }
 }
 
 ?>
