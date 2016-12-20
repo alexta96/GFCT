@@ -1,9 +1,6 @@
 <?php
-
 namespace GfctBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Empresas
  *
@@ -20,54 +17,46 @@ class Empresas
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var string
      *
      * @ORM\Column(name="nombre", type="string", length=60)
      */
     private $nombre;
-
     /**
      * @var string
      *
      * @ORM\Column(name="direccion", type="string", length=255)
      */
     private $direccion;
-
     /**
      * @var string
      *
      * @ORM\Column(name="cp", type="string", length=5)
      */
     private $cp;
-
     /**
      * @var string
      *
      * @ORM\Column(name="telefono1", type="string", length=13)
      */
     private $telefono1;
-
     /**
      * @var string
      *
      * @ORM\Column(name="telefono2", type="string", length=13)
      */
     private $telefono2;
-
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="fecha", type="datetime")
      */
     private $fecha;
-
     /**
      * @ORM\OneToMany(targetEntity="Alumnos", mappedBy="empresa")
      */
     private $alumnos;
-
     /**
      * Get id
      *
@@ -77,7 +66,6 @@ class Empresas
     {
         return $this->id;
     }
-
     /**
      * Set nombre
      *
@@ -88,10 +76,8 @@ class Empresas
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
-
         return $this;
     }
-
     /**
      * Get nombre
      *
@@ -101,7 +87,6 @@ class Empresas
     {
         return $this->nombre;
     }
-
     /**
      * Set direccion
      *
@@ -112,10 +97,8 @@ class Empresas
     public function setDireccion($direccion)
     {
         $this->direccion = $direccion;
-
         return $this;
     }
-
     /**
      * Get direccion
      *
@@ -125,7 +108,6 @@ class Empresas
     {
         return $this->direccion;
     }
-
     /**
      * Set cp
      *
@@ -136,10 +118,8 @@ class Empresas
     public function setCp($cp)
     {
         $this->cp = $cp;
-
         return $this;
     }
-
     /**
      * Get cp
      *
@@ -149,7 +129,6 @@ class Empresas
     {
         return $this->cp;
     }
-
     /**
      * Set telefono1
      *
@@ -160,10 +139,8 @@ class Empresas
     public function setTelefono1($telefono1)
     {
         $this->telefono1 = $telefono1;
-
         return $this;
     }
-
     /**
      * Get telefono1
      *
@@ -173,7 +150,6 @@ class Empresas
     {
         return $this->telefono1;
     }
-
     /**
      * Set telefono2
      *
@@ -184,10 +160,8 @@ class Empresas
     public function setTelefono2($telefono2)
     {
         $this->telefono2 = $telefono2;
-
         return $this;
     }
-
     /**
      * Get telefono2
      *
@@ -197,7 +171,6 @@ class Empresas
     {
         return $this->telefono2;
     }
-
     /**
      * Set fecha
      *
@@ -208,10 +181,8 @@ class Empresas
     public function setFecha($fecha)
     {
         $this->fecha = $fecha;
-
         return $this;
     }
-
     /**
      * Get fecha
      *
@@ -228,7 +199,6 @@ class Empresas
     {
         $this->alumnos = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
     /**
      * Add alumno
      *
@@ -239,10 +209,8 @@ class Empresas
     public function addAlumno(\GfctBundle\Entity\Alumnos $alumno)
     {
         $this->alumnos[] = $alumno;
-
         return $this;
     }
-
     /**
      * Remove alumno
      *
@@ -252,7 +220,6 @@ class Empresas
     {
         $this->alumnos->removeElement($alumno);
     }
-
     /**
      * Get alumnos
      *

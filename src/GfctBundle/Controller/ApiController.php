@@ -41,32 +41,39 @@ class ApiController extends Controller
         //return $this->json($empresas);
     }
 
-    //Funcion "serialize" que cogerá los campos de la BD
-    private function serializeProfesor(Profesores $profesor)
+    public function empresasinsertAction(Request $request)
     {
-      return array(
-          'nombre' => $profesor->getNombre(),
-          'apellidos' => $profesor->getApellidos(),
-          'departamento' => $profesor->getDepartamento(),
+        if (
+          $request->request->get('nombre')==null
+          ||
+          $request->request->get('direccion')==null
+          ||
+          $request->request->get('cp')==null
+          ||
+          $request->request->get('telefono1')==null
+          ||
+          $request->request->get('telefono2')==null
+          ||
+          $request->request->get('fecha')==null
 
-      );
-    }
 
-    //Funcion profesores que mostrará los datos de los profesores tranformandolo en formato JSON 
-    public function profesoresAction()
-    {
-        $repository = $this->getDoctrine()->getRepository('GfctBundle:Profesores');
-        $profesores = $repository->findAll();
+          ) 
+        {
+          $response = new JsonResponse($this->badRequest(self::NO_ALL_ELEMENTS,""),400);
+        }else{
+          $empresa = new Empresas();
+          $empresa->setNombre ($request->request->get('nombre'));
+          $empresa->setNombre ($request->request->get('direccion'));
+          $empresa->setNombre ($request->request->get('cp'));
+          $empresa->setNombre ($request->request->get('telefono1'));
+          $empresa->setNombre ($request->request->get('telefono2'));
+          $empresa->setNombre ($request->request->get('fecha'));
 
+          $em= $this->getDoctrine()->getManager();
+          $em->persist($empresa);
+          $em->$flush();
 
-        //var_dump($profesores);
-        $data = array('profesores' => array());
-        foreach ($profesores as $profesor) {
-            $data['profesores'][] = $this->serializeProfesor($profesor);
         }
-        $response = new JsonResponse($data, 200);
-        return $response;
-        //return $this->json($profesores);
     }
 }
 

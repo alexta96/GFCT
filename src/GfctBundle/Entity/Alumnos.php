@@ -1,9 +1,6 @@
 <?php
-
 namespace GfctBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Alumnos
  *
@@ -20,42 +17,29 @@ class Alumnos
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var string
      *
      * @ORM\Column(name="nombre", type="string", length=100)
      */
     private $nombre;
-
     /**
      * @var string
      *
      * @ORM\Column(name="apellidos", type="string", length=255)
      */
     private $apellidos;
-
     /**
      * @var string
      *
      * @ORM\Column(name="dni", type="string", length=9)
      */
     private $dni;
-
     /**
      * @ORM\ManyToOne(targetEntity="Empresas", inversedBy="alumnos")
      * @ORM\JoinColumn(name="empresas_id", referencedColumnName="id")
      */
-
-    /**
-     * @ORM\OneToOne(targetEntity="Profesores", inversedBy="alumnos")
-     * @ORM\JoinColumn(name="profesores_id", referencedColumnName="id")
-     */
-
-    private $profesores;
-    
     private $empresa;
-
     /**
      * Get id
      *
@@ -65,7 +49,6 @@ class Alumnos
     {
         return $this->id;
     }
-
     /**
      * Set nombre
      *
@@ -76,10 +59,8 @@ class Alumnos
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
-
         return $this;
     }
-
     /**
      * Get nombre
      *
@@ -89,7 +70,6 @@ class Alumnos
     {
         return $this->nombre;
     }
-
     /**
      * Set apellidos
      *
@@ -100,10 +80,8 @@ class Alumnos
     public function setApellidos($apellidos)
     {
         $this->apellidos = $apellidos;
-
         return $this;
     }
-
     /**
      * Get apellidos
      *
@@ -113,7 +91,6 @@ class Alumnos
     {
         return $this->apellidos;
     }
-
     /**
      * Set dni
      *
@@ -124,10 +101,8 @@ class Alumnos
     public function setDni($dni)
     {
         $this->dni = $dni;
-
         return $this;
     }
-
     /**
      * Get dni
      *
@@ -137,7 +112,6 @@ class Alumnos
     {
         return $this->dni;
     }
-
     /**
      * Set empresa
      *
@@ -148,10 +122,8 @@ class Alumnos
     public function setEmpresa(\GfctBundle\Entity\Empresas $empresa = null)
     {
         $this->empresa = $empresa;
-
         return $this;
     }
-
     /**
      * Get empresa
      *
