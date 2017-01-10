@@ -43,3 +43,7 @@ api_mostrar_profesores:
     path:     /apiget/profesores
     defaults: { _controller: GfctBundle:Api:profesores }
     methods: [GET]
+
+registro:
+    path:     /register
+    defaults: { _controller: GfctBundle:Default:register }

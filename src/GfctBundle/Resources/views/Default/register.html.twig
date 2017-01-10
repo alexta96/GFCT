@@ -1,0 +1,54 @@
+{% block title %}GFCT{% endblock %}
+
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+<h1>Registro</h1><br>
+
+
+{{ form_start(form) }}
+
+	<div>
+    <p>
+    {{ form_label(form.username, 'Nombre de Usuario:', {'label_attr': {'class': ''}}) }}
+    </p>
+    {{ form_errors(form.username) }}
+    {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+	<div>
+    <p>
+    {{ form_label(form.email, 'E-mail:', {'label_attr': {'class': ''}}) }}
+    </p>
+    {{ form_errors(form.email) }}
+    {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+	</div>
+
+	<div>
+    <p>
+    {{ form_label(form.plainPassword.first, 'Contraseña:', {'label_attr': {'class': ''}}) }}
+    </p>
+    {{ form_errors(form.plainPassword.first) }}
+    {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control'}}) }}
+	</div>
+
+	<div>
+    <p>
+    {{ form_label(form.plainPassword.second, 'Telefono 1:', {'label_attr': {'class': ''}}) }}
+    </p>
+    {{ form_errors(form.plainPassword.second) }}
+    {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
+	</div>
+
+    <div>
+    {{ form_widget(form.Guardar, {'attr': {'class': 'submit'}}) }}
+    </div>
+
+    <div>
+    {{ form_widget(form.Borrar, {'attr': {'class': 'reset'}}) }}
+    </div>
+{{ form_end(form) }}
+
+
+{% endblock %}

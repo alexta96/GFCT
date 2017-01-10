@@ -43,6 +43,7 @@ class User implements UserInterface
      */
     private $password;
 
+
     /**
      * Get id
      *
@@ -137,17 +138,19 @@ class User implements UserInterface
         return $this->password;
     }
 
-    public function getSalt() 
+    public function getSalt()
     {
+        // The bcrypt algorithm doesn't require a separate salt.
+        // You *may* need a real salt if you choose a different encoder.
         return null;
     }
 
     public function getRoles() 
     { 
+    
         return array('ROLE_USER'); 
     }
 
-    public function eraseCredentials(){
-    }
+    public function eraseCredentials() {}
 }
 
