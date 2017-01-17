@@ -2,6 +2,11 @@ gfct:
     resource: "@GfctBundle/Resources/config/routing.yml"
     prefix:   /
 
+admin:
+    resource: "@GfctBundle/Controller"
+    type: annotation
+    prefix:   /admin/
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

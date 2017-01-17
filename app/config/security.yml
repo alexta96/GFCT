@@ -3,16 +3,44 @@
 security:
     encoders:
         GfctBundle\Entity\User: bcrypt
+        Symfony\Component\Security\Core\User\User: plaintext
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    
     providers:
+        our_db_provider:
+            entity:
+                class: GfctBundle:User
+                property: username
         in_memory:
-            memory: ~
+            memory:
+                users:
+                    admin:
+                        password: 1234
+                        roles: 'ROLE_ADMIN'
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+
+        admin:
+            
+            pattern: ^/admin
+            http_basic: ~
+
+        usuarios:
+            pattern: ^/
+            anonymous: ~
+            provider: our_db_provider
+            form_login:
+                login_path: /usuarios/login
+                check_path: /usuarios/login
+                default_target_path: /empresas/all
+
+            logout:
+                path:   /usuarios/logout
+                target: /usuarios/login
 
         main:
             anonymous: ~
@@ -23,3 +51,12 @@ security:
 
             # form_login: ~
             # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+
+    access_control:
+        - { path: ^/usuarios/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/usuarios/registro, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, roles: ROLE_USER }
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]

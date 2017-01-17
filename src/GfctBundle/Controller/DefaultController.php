@@ -46,4 +46,25 @@ class DefaultController extends Controller
             array('form' => $form->createView())
         );
     }
+
+    public function usuariosAction()
+    {
+        return $this->render('GfctBundle:Default:index.html.twig');
+    }
+
+    public function loginAction(Request $request)
+    {
+        $authenticationUtils = $this->get('security.authentication_utils');
+
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+
+        return $this->render('GfctBundle:Default:login.html.twig', array(
+            'last_username' => $lastUsername,
+            'error'         => $error,
+        ));
+    }
 }

@@ -50,6 +50,7 @@
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
+            <a href="{{asset('/usuarios/login')}}">Log In</a>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Alejandro Tarazona <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -64,7 +65,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Cerra sesión</a>
+                            <a href="{{asset('/usuarios/logout')}}"><i class="fa fa-fw fa-power-off"></i> Cerra sesión</a>
                         </li>
                     </ul>
                 </li>
@@ -76,10 +77,10 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Empresas <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="{{asset('/empresas/all')}}">Mostrar Empresas</a>
+                                <a href="{{asset('empresas/all')}}">Mostrar Empresas</a>
                             </li>
                             <li>
-                                <a href="{{asset('/empresas/new')}}">Insertar Empresas</a>
+                                <a href="{{asset('empresas/new')}}">Insertar Empresas</a>
                             </li>
                         </ul>
                     </li>
@@ -87,7 +88,7 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-arrows-v"></i> Alumnos <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo1" class="collapse">
                             <li>
-                                <a href="{{asset('/alumnos/all')}}">Mostrar Alumnos</a>
+                                <a href="{{asset('alumnos/all')}}">Mostrar Alumnos</a>
                             </li>
                         </ul>
                     </li>

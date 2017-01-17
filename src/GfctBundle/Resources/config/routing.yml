@@ -1,7 +1,3 @@
-gfct_homepage:
-    path:     /
-    defaults: { _controller: GfctBundle:Default:index }
-
 all_empresas:
     path:     /empresas/all
     defaults: { _controller: GfctBundle:Empresas:all }
@@ -47,3 +43,18 @@ api_mostrar_profesores:
 registro:
     path:     /register
     defaults: { _controller: GfctBundle:Default:register }
+
+admin:
+    path:     /admin
+    defaults: { _controller: GfctBundle:Admin:all }
+
+usuarios_login:
+    path:     /usuarios/login
+    defaults: { _controller: GfctBundle:Default:login }
+
+usuario_login:
+    path:     /usuarios/login
+    defaults: { _controller: GfctBundle:Default:login }
+
+usuarios_logout:
+    path:     /usuarios/logout
