@@ -54,7 +54,7 @@ security:
 
     access_control:
         - { path: ^/usuarios/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/usuarios/registro, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/, roles: ROLE_USER }
 
     role_hierarchy:
