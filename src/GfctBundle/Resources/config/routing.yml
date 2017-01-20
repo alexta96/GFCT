@@ -52,9 +52,5 @@ usuarios_login:
     path:     /usuarios/login
     defaults: { _controller: GfctBundle:Default:login }
 
-usuario_login:
-    path:     /usuarios/login
-    defaults: { _controller: GfctBundle:Default:login }
-
 usuarios_logout:
     path:     /usuarios/logout
