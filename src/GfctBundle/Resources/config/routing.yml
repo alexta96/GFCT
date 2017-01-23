@@ -46,13 +46,9 @@ registro:
 
 admin:
     path:     /admin
-    defaults: { _controller: GfctBundle:Admin:all }
+    defaults: { _controller: GfctBundle:Default:admin }
 
 usuarios_login:
-    path:     /usuarios/login
-    defaults: { _controller: GfctBundle:Default:login }
-
-usuario_login:
     path:     /usuarios/login
     defaults: { _controller: GfctBundle:Default:login }
 

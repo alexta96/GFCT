@@ -5,6 +5,8 @@ namespace GfctBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use GfctBundle\Entity\User;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use GfctBundle\Form\UserType;
 
 class DefaultController extends Controller
@@ -14,6 +16,10 @@ class DefaultController extends Controller
         return $this->render('GfctBundle:Default:index.html.twig');
     }
 
+    public function adminAction()
+    {
+            return $this->render('GfctBundle:Default:index.html.twig');
+    }
     
     public function registerAction(Request $request)
     {
@@ -38,7 +44,7 @@ class DefaultController extends Controller
             // ... do any other work - like sending them an email, etc
             // maybe set a "flash" success message for the user
 
-            return new Response("Usuario Registrado");
+            return new Response("all_empresas");
         }
 
         return $this->render(
