@@ -50,6 +50,12 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="roles", type="json_array")
+     */
+    private $roles = array();
 
     /**
      * Get id
@@ -152,6 +158,19 @@ class User implements UserInterface
         return null;
     }
 
+    /**
+     * Set roles
+     *
+     * @param string $roles
+     *
+     * @return Users
+     */
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
+        return $this;
+    }
+    
     public function getRoles() 
     { 
     
