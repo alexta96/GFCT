@@ -1,0 +1,20 @@
+        {% extends '::base.html.twig' %}
+        {% block body %}
+        <div class="panel panel-default">
+        <div class="panel-heading"><h1>Listado De Configuraciones</h1></div><br>
+        <table class="table">
+            <tr>
+                <th><b>#</b></th>
+                <th><b>Param</b></th>
+                <th><b>Configuracion</b></th>
+            </tr>
+        {% for configuraciones in configuraciones %}
+            <tr>
+                <th>{{ configuraciones.id }}</td>
+                <td>{{ configuraciones.param }}</td>
+                <td>{{ configuraciones.configuracion }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        </div>
+        {% endblock %}

@@ -45,8 +45,7 @@ class DefaultController extends Controller
             //return new Response("Usuario registrado");
             //return $this->render('FctBundle:Users:login.html.twig',array('form' => $form->createView()));
         }
-        return $this->render('GfctBundle:Default:register.html.twig',array('form' => $form->createView())
-        );
+        return $this->render('GfctBundle:Default:register.html.twig',array('form' => $form->createView()));
     }
 
     public function usuariosAction()

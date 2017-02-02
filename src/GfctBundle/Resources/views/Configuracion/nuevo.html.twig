@@ -1,0 +1,34 @@
+{% block title %}GTFC{% endblock %}
+
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+<h1>Crear Configuracion</h1><br>
+
+
+{{ form_start(form) }}
+
+	<div>
+    <p>
+    {{ form_label(form.param, 'Param:', {'label_attr': {'class': ''}}) }}
+    </p>
+    {{ form_errors(form.param) }}
+    {{ form_widget(form.param, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+	<div>
+    <p>
+    {{ form_label(form.configuracion, 'Configuracion:', {'label_attr': {'class': ''}}) }}
+    </p>
+    {{ form_errors(form.configuracion) }}
+    {{ form_widget(form.configuracion, {'attr': {'class': 'form-control'}}) }}
+	</div>
+
+    <div>
+    {{ form_widget(form.Crear, {'attr': {'class': 'submit'}}) }}
+    </div>
+{{ form_end(form) }}
+
+
+{% endblock %}

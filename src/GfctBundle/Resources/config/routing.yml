@@ -52,5 +52,17 @@ usuarios_login:
     path:     /usuarios/login
     defaults: { _controller: GfctBundle:Default:login }
 
+configuracion_nuevo:
+    path:     /conf/nuevo
+    defaults: { _controller: GfctBundle:Configuracion:nuevoconf }
+
+all_configuracion:
+    path:     /conf/all
+    defaults: { _controller: GfctBundle:Configuracion:allconf }
+
+exito_configuracion:
+    path:     /conf/msgExito
+    defaults: { _controller: FctBundle:Configuracion:msgExito }
+    
 usuarios_logout:
     path:     /usuarios/logout
