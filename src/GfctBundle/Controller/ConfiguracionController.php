@@ -40,8 +40,8 @@ class ConfiguracionController extends Controller
 
     public function msgExitoAction()
     {
-        $repository = $this->getDoctrine()->getRepository('FctBundle:conf');
+        $repository = $this->getDoctrine()->getRepository('GfctBundle:conf');
         $config = $repository->findAll();
-        return $this->render('FctBundle:Configuracion:exito.html.twig',array('config'=>$config));
+        return $this->render('GfctBundle:Configuracion:exito.html.twig',array('config'=>$config));
     }
 }
